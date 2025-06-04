@@ -1,6 +1,47 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    transition: .4s ease-in;
+}
+.content{
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+.sequence-result{
+    text-align: center;
+}
+
 .term-box{
     background: black;
     padding: 10px;
     color: white;
     margin: 5px;
 }
+label{
+    display: block;
+}
+header{
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+
+input{
+    height: 25px;
+}
+
+body.dark-mode{
+    background-color: #121212;
+    color: white;
+}
+ #btn-theme{
+    margin: 5px;
+ }
+
+ #term-list{
+    text-overflow: ellipsis;
+ }

@@ -7,22 +7,38 @@
     <title>Document</title>
 </head>
 <body>
-    <section>
+    <header>
+        <h2>Day 1</h2>
+        <ol>
+            <li>JavaScript: Create an arithmetic sequence generator with sum and nth term finder.</li>
+            <li>Frontend: UI for arithmetic sequence input and result display with light/dark mode.</li>
+            <li>Backend: API that returns sequence, sum, and nth term. Test with Jest.</li>
+        </ol>
+    </header>
+    <nav>
+        <button id="btn-theme">Switch to Dark mode</button>
+    </nav>
+    <section class="content">
         <div>
-            <label for="a">Enter First Term</label>
-            <input id="a" type="number" required>
+            <div>
+                <label for="a">Enter First Term</label>
+                <input id="a" type="number" required>
+            </div>
+            <div>
+                <label for="d">Enter Common difference</label>
+                <input id="d" type="number" required>
+            </div>
+            <div>
+                <label for="n">Enter nth term</label>
+                <input id="n" type="number" required>
+            </div>
+            <button id="btn">Submit</button>
         </div>
-        <div>
-            <label for="d">Enter Common difference</label>
-            <input id="d" type="number" required>
-        </div>
-        <div>
-            <label for="n">Enter nth term</label>
-            <input id="n" type="number" required>
-        </div>
-        <button id="btn">Submit</button>
     </section>
-    <span id="term-list"></span>
+    <div class="sequence-result">
+        <div id="result"></div>
+        <div id="term-list"></div>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>

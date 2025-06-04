@@ -12,13 +12,13 @@ const button = document.getElementById('btn');
 let data = {};
 
 //Formula to get the nth term
-function formula(){
+export function formula(){
     let term = Number(a.value) + (Number(n.value) - 1) * Number(d.value);
     return term;
 }
 
 //Computation to do a list of terms using loop
-function sequence(a, n,d){ 
+export function sequence(a, n,d){ 
 let current = a;
 let arr = [0];
     for(let i = 0; i < n; i++){
@@ -31,9 +31,11 @@ let arr = [0];
 }
 
 //Display sequence in client
-function display_terms(){
+export function display_terms(){
+    const nth_term = document.getElementById('result');
     const term_list = document.getElementById('term-list');
     term_list.innerHTML = data.sequence;
+    nth_term.innerHTML = `The nth term is ${data.term}`;
 }
 
 //Action button to excute functions
@@ -52,3 +54,23 @@ button.addEventListener('click', ()=> {
     console.log(data)
 });
 
+//Dark mode theme
+const toggle = document.getElementById('btn-theme');
+
+// Load theme on page load
+const savedTheme = localStorage.getItem('dark-theme');
+if (savedTheme === 'true') {
+  document.body.classList.add('dark-mode');
+  toggle.innerHTML = 'Switch to Light mode';
+} else {
+  document.body.classList.remove('dark-mode');
+  toggle.innerHTML = 'Switch to Dark mode';
+}
+
+toggle.addEventListener('click', () => {
+  const isDark = document.body.classList.toggle('dark-mode'); // Toggle class
+  localStorage.setItem('dark-theme', isDark); // Save the new state
+
+  // Update button text
+  toggle.innerHTML = isDark ? 'Switch to Light mode' : 'Switch to Dark mode';
+});
